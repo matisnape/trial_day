@@ -1,5 +1,13 @@
 require 'rails_helper'
 
 RSpec.feature "Fundraisers", type: :feature do
-  pending "add some scenarios (or delete) #{__FILE__}"
+
+  before do
+
+  end
+
+  xit "shows imported data" do
+    visit '/'
+
+  end
 end
