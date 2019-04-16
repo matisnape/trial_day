@@ -4,8 +4,7 @@
       <h2 class="card-title"><%= link_to fundraiser.title, fundraiser %></h4>
       <%= sanitize fundraiser.description %>
 
-      <%= link_to 'Edit', edit_fundraiser_path(fundraiser) %><br>
-      <%= link_to 'Destroy', fundraiser, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Usuń', fundraiser, method: :delete, data: { confirm: 'Are you sure?' } %>
     </div>
   </div>
   <div class="card">
