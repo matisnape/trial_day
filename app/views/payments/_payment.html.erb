@@ -1,0 +1,9 @@
+<li class="list_row">
+  <div class="list_column"><img src="<%= payment.photo_url %>"></div>
+  <div class="list_column">
+    <h6><%= payment.signature %></h5><br>
+    Wpłacił <%= payment.amount %>zł<br>
+    <%= time_ago_in_words(payment.paid_at) %> ago<br>
+    <%= payment.comment_text %><br>
+  </div>
+</li>

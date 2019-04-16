@@ -13,6 +13,23 @@
  */
  @import "bootstrap";
 
- td, th, tr {
+ body {
+  background-color:#003366;
+ }
+
+ h1 {
+  color: #fff;
+ }
+
+td, th, tr {
   vertical-align: top;
 }
+
+.list_row {
+  display: flex;
+}
+
+.list_column {
+  flex: 50%;
+}
+

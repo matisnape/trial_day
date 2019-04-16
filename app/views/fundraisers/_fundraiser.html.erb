@@ -1,0 +1,42 @@
+<div class="col-sm-7">
+  <div class="card">
+    <div class="card-body">
+      <h2 class="card-title"><%= link_to fundraiser.title, fundraiser %></h2>
+      <%= sanitize fundraiser.description %>
+
+      <%= link_to 'Edit', edit_fundraiser_path(fundraiser) %><br>
+      <%= link_to 'Destroy', fundraiser, method: :delete, data: { confirm: 'Are you sure?' } %>
+    </div>
+  </div>
+  <div class="card">
+    <div class="card-body">
+      <h4 class="card-title">Wpłaty</h4>
+      <ol>
+        <%= render fundraiser.payments %>
+      </ol>
+    </div>
+  </div>
+
+  <div class="col-sm-3">
+    <div class="card">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">
+          <div class="h6 text-muted">Cel</div>
+          <div class="h5"><%= fundraiser.funds_aim %></div>
+        </li>
+        <li class="list-group-item">
+          <div class="h6 text-muted">Suma datków</div>
+          <div class="h5"><%= fundraiser.funds_current %></div>
+        </li>
+        <li class="list-group-item">
+          <div class="h6 text-muted">% ufundowany</div>
+          <div class="h5"><%= fundraiser.funds_percentage %></div>
+        </li>
+        <li class="list-group-item">
+          <div class="h6 text-muted">Wsparło</div>
+          <div class="h5"><%= fundraiser.payments_total_count %></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
