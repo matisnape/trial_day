@@ -3,6 +3,21 @@
   <h1>Fundraisers</h1>
 
   <div class="row">
-    <%= render @fundraisers %>
+    <div class="col-sm-7">
+      <% @fundraisers.each do |fundraiser| %>
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title">
+              <%= link_to fundraiser.title, fundraiser %>
+            </div>
+          </div>
+          <div class="card-footer">
+            <small>
+              <%= link_to 'Usuń', fundraiser, method: :delete, data: { confirm: 'Are you sure?' }, class: "text-muted" %>
+            </small>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
 <br>
