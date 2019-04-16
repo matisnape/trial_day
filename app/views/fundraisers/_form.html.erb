@@ -1,0 +1,47 @@
+<%= form_with(model: fundraiser, local: true) do |form| %>
+  <% if fundraiser.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(fundraiser.errors.count, "error") %> prohibited this fundraiser from being saved:</h2>
+
+      <ul>
+      <% fundraiser.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :funds_aim %>
+    <%= form.number_field :funds_aim %>
+  </div>
+
+  <div class="field">
+    <%= form.label :funds_current %>
+    <%= form.number_field :funds_current %>
+  </div>
+
+  <div class="field">
+    <%= form.label :funds_percentage %>
+    <%= form.number_field :funds_percentage %>
+  </div>
+
+  <div class="field">
+    <%= form.label :payments_total_count %>
+    <%= form.number_field :payments_total_count %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
