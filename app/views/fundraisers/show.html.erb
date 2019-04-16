@@ -7,7 +7,7 @@
 
 <p>
   <strong>Description:</strong>
-  <%= @fundraiser.description %>
+  <%= sanitize @fundraiser.description %>
 </p>
 
 <p>
@@ -29,6 +29,18 @@
   <strong>Payments total count:</strong>
   <%= @fundraiser.payments_total_count %>
 </p>
+
+<ol>
+  <% @fundraiser.payments.each do |payment| %>
+    <li>
+      <%= payment.paid_at %><br>
+      <%= payment.signature %><br>
+      <%= payment.comment_text %><br>
+      <%= payment.amount %><br>
+      <img src="<%= payment.photo_url %>">
+    </li>
+  <% end %>
+</ol>
 
 <%= link_to 'Edit', edit_fundraiser_path(@fundraiser) %> |
 <%= link_to 'Back', fundraisers_path %>

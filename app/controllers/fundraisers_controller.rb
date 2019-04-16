@@ -4,7 +4,7 @@ class FundraisersController < ApplicationController
   # GET /fundraisers
   # GET /fundraisers.json
   def index
-    @fundraisers = Fundraiser.all
+    @fundraisers = Fundraiser.all.includes(:payments)
   end
 
   # GET /fundraisers/1

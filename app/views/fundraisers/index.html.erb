@@ -19,11 +19,24 @@
     <% @fundraisers.each do |fundraiser| %>
       <tr>
         <td><%= fundraiser.title %></td>
-        <td><%= fundraiser.description %></td>
+        <td><%= sanitize fundraiser.description %></td>
         <td><%= fundraiser.funds_aim %></td>
         <td><%= fundraiser.funds_current %></td>
         <td><%= fundraiser.funds_percentage %></td>
         <td><%= fundraiser.payments_total_count %></td>
+        <td>
+          <ol>
+          <% fundraiser.payments.each do |payment| %>
+            <li>
+              <%= payment.paid_at %><br>
+              <%= payment.signature %><br>
+              <%= payment.comment_text %><br>
+              <%= payment.amount %><br>
+              <img src="<%= payment.photo_url %>">
+            </li>
+          <% end %>
+          </ol>
+        </td>
         <td><%= link_to 'Show', fundraiser %></td>
         <td><%= link_to 'Edit', edit_fundraiser_path(fundraiser) %></td>
         <td><%= link_to 'Destroy', fundraiser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
