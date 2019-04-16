@@ -1,46 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @fundraiser.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= sanitize @fundraiser.description %>
-</p>
-
-<p>
-  <strong>Funds aim:</strong>
-  <%= @fundraiser.funds_aim %>
-</p>
-
-<p>
-  <strong>Funds current:</strong>
-  <%= @fundraiser.funds_current %>
-</p>
-
-<p>
-  <strong>Funds percentage:</strong>
-  <%= @fundraiser.funds_percentage %>
-</p>
-
-<p>
-  <strong>Payments total count:</strong>
-  <%= @fundraiser.payments_total_count %>
-</p>
-
-<ol>
-  <% @fundraiser.payments.each do |payment| %>
-    <li>
-      <%= payment.paid_at %><br>
-      <%= payment.signature %><br>
-      <%= payment.comment_text %><br>
-      <%= payment.amount %><br>
-      <img src="<%= payment.photo_url %>">
-    </li>
-  <% end %>
-</ol>
+<div class="row">
+  <%= render @fundraiser %>
+</div>
 
 <%= link_to 'Edit', edit_fundraiser_path(@fundraiser) %> |
 <%= link_to 'Back', fundraisers_path %>
