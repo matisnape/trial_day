@@ -10,6 +10,9 @@ class FundraisersController < ApplicationController
   # GET /fundraisers/1
   # GET /fundraisers/1.json
   def show
+    @payments = @fundraiser.payments.paginate,
+      per_page: 10,
+      page: params[:page]
   end
 
   # DELETE /fundraisers/1

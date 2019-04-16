@@ -1,11 +1,12 @@
 class ImportFromAPI
-  BASE_URL = "https://www.siepomaga.pl/gramy17.json?page=1"
+  BASE_URL = "https://www.siepomaga.pl/gramy17.json"
 
-  def initialize
-    @response = HTTParty.get(BASE_URL)
+  def get_index
+    @response = HTTParty.get(BASE_URL + "?page=#{page}")
   end
 
   def run!
+    get_index
     new_fundraiser = Fundraiser.create(
       title: @response["title"],
       description: @response["description"],
@@ -25,5 +26,9 @@ class ImportFromAPI
         fundraiser_id: new_fundraiser.id
       )
     end
+  end
+
+  def get_payments_page(page)
+
   end
 end
