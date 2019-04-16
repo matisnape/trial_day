@@ -27,8 +27,14 @@
 
 .list_column {
   flex: 50%;
+  height: 170px;
 }
 
 .card {
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+img.resize {
+  width: auto;
+  height: 85%;
 }
