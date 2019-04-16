@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: Hulajnoga
+  description: Zbieramy na hulajnogę
+  funds_aim: 200
+  funds_current: 20
+  funds_percentage: 10
+  payments_total_count: 1
+
+two:
+  title: Spanko
+  description: Nie mogę, mam spanko
+  funds_aim: 1000
+  funds_current: 100
+  funds_percentage: 10
+  payments_total_count: 1

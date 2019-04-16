@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  paid_at: "2018-12-06T22:55:54.000+01:00"
+  signature: Anks
+  amount: 20
+  photo_url: https://www.siepomaga.pl/assets/siepomaga/avatars/m0-225005d6d3177d11a15825ce3b60968454421a9f7a5adc2860caddc9192e6167.png
+  comment_text: Comment_one
+  fundraiser: one
+
+two:
+  paid_at: "2017-12-06T22:55:54.000+01:00"
+  signature: Kasia
+  amount: 100
+  photo_url: https://www.siepomaga.pl/assets/siepomaga/avatars/m0-225005d6d3177d11a15825ce3b60968454421a9f7a5adc2860caddc9192e6167.png
+  comment_text: Comment_two
+  fundraiser: two

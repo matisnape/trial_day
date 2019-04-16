@@ -10,6 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2019_04_16_074420) do
 
+  create_table "fundraisers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.integer "funds_aim"
+    t.integer "funds_current"
+    t.integer "funds_percentage"
+    t.integer "payments_total_count"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "paid_at"
+    t.string "signature"
+    t.integer "amount"
+    t.string "photo_url"
+    t.string "comment_text"
+    t.bigint "fundraiser_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["fundraiser_id"], name: "index_payments_on_fundraiser_id"
+  end
+
+  add_foreign_key "payments", "fundraisers"
 end

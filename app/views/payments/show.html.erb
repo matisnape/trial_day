@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Paid at:</strong>
+  <%= @payment.paid_at %>
+</p>
+
+<p>
+  <strong>Signature:</strong>
+  <%= @payment.signature %>
+</p>
+
+<p>
+  <strong>Amount:</strong>
+  <%= @payment.amount %>
+</p>
+
+<p>
+  <strong>Photo url:</strong>
+  <%= @payment.photo_url %>
+</p>
+
+<p>
+  <strong>Comment text:</strong>
+  <%= @payment.comment_text %>
+</p>
+
+<p>
+  <strong>Fundraiser:</strong>
+  <%= @payment.fundraiser %>
+</p>
+
+<%= link_to 'Edit', edit_payment_path(@payment) %> |
+<%= link_to 'Back', payments_path %>

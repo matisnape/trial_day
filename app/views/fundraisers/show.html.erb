@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @fundraiser.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @fundraiser.description %>
+</p>
+
+<p>
+  <strong>Funds aim:</strong>
+  <%= @fundraiser.funds_aim %>
+</p>
+
+<p>
+  <strong>Funds current:</strong>
+  <%= @fundraiser.funds_current %>
+</p>
+
+<p>
+  <strong>Funds percentage:</strong>
+  <%= @fundraiser.funds_percentage %>
+</p>
+
+<p>
+  <strong>Payments total count:</strong>
+  <%= @fundraiser.payments_total_count %>
+</p>
+
+<%= link_to 'Edit', edit_fundraiser_path(@fundraiser) %> |
+<%= link_to 'Back', fundraisers_path %>
