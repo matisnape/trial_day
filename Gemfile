@@ -39,6 +39,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'httparty'
+gem 'webmock'
 
 
 group :development, :test do
