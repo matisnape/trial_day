@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2019_04_17_191258) do
     t.string "title"
     t.text "description"
     t.integer "funds_aim"
-    t.float "funds_current"
+    t.decimal "funds_current", precision: 20, scale: 2
     t.integer "funds_percentage"
     t.integer "payments_total_count"
     t.datetime "created_at", null: false
@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2019_04_17_191258) do
   create_table "payments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "paid_at"
     t.string "signature"
-    t.integer "amount"
+    t.decimal "amount", precision: 20, scale: 2
     t.string "photo_url"
     t.string "comment_text"
     t.bigint "fundraiser_id"
