@@ -5,6 +5,7 @@ Simple app for consuming an API
 
 ```
 bundle
+rails db:setup
 rails db:migrate
 rails s
 ```
