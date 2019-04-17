@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_16_074420) do
+ActiveRecord::Schema.define(version: 2019_04_17_191258) do
 
   create_table "fundraisers", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
     t.text "description"
     t.integer "funds_aim"
-    t.integer "funds_current"
+    t.float "funds_current"
     t.integer "funds_percentage"
     t.integer "payments_total_count"
     t.datetime "created_at", null: false
