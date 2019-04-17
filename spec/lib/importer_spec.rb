@@ -5,6 +5,7 @@ RSpec.describe ImportFromAPI do
   let(:new_import) { ImportFromAPI.new }
   let(:response) { File.read("#{::Rails.root}/spec/fixtures/gramy17.json") }
   let(:parsed_response) { JSON.parse(response) }
+  let(:payments) { parsed_response["payments"] }
 
   before do
     stub_request(:get, "https://www.siepomaga.pl/gramy17.json?page=1").
@@ -26,18 +27,22 @@ RSpec.describe ImportFromAPI do
   end
 
   it "imports one fundraiser to db with payments" do
-    expect(Fundraiser.count).to eq 0
-    expect(Payment.count).to eq 0
-    new_import.run!
-    expect(Fundraiser.count).to eq 1
+    expect { new_import.run! }
+      .to change { Fundraiser.count }.by(1)
+      .and change { Payment.count }.by(payments.count)
+
     expect(Fundraiser.first).to have_attributes(
-      title: parsed_response["title"],
-      description: parsed_response["description"],
-      funds_aim: parsed_response["funds_aim"],
-      funds_current: parsed_response["funds_current"],
-      funds_percentage: parsed_response["funds_percentage"],
-      payments_total_count: parsed_response["payments_total_count"]
+      parsed_response.slice(
+        "title", "description",
+        "funds_aim", "funds_current", "funds_percentage",
+        "payments_total_count"
+      )
     )
-    expect(Payment.count).to eq 25
+    db_payments = Fundraiser.first.payments.to_a
+    db_payments.each_with_index do |db_payment, idx|
+      expect(db_payment).to have_attributes(
+        payments[idx].slice("paid_at", "signature", "amount", "photo_url", "comment_text")
+      )
+    end
   end
 end
