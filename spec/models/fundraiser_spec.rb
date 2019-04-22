@@ -2,6 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Fundraiser, type: :model do
 
+  it { should have_many(:payments) }
 
   it "after creating fundraiser, there is 1 fundraiser" do
     expect { Fundraiser.create }
