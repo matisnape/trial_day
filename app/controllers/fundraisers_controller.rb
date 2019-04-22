@@ -16,5 +16,6 @@ class FundraisersController < ApplicationController
   private
     def set_fundraiser
       @fundraiser = Fundraiser.find(params[:id])
+      @payments = @fundraiser.payments.paginate(per_page: 25, page: params[:page])
     end
 end

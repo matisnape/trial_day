@@ -40,6 +40,7 @@ gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'httparty'
 gem 'webmock'
+gem 'will_paginate'
 
 
 group :development, :test do
