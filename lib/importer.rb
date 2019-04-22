@@ -32,6 +32,7 @@ class ImportFromAPI
 
   def append_page_payments_to_payments(page_payments)
     @payments.append(page_payments)
+    @payments = @payments.flatten
   end
 
   def get_all_payments
@@ -40,7 +41,6 @@ class ImportFromAPI
       append_page_payments_to_payments(resp)
       puts "Appended page #{page}"
     end
-    @payments.flatten
   end
 
   def save_payments_to_db(payments)
