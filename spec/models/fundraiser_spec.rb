@@ -1,14 +1,11 @@
 require 'rails_helper'
 
-RSpec.describe Fundraiser do
+RSpec.describe Fundraiser, type: :model do
 
-  it "has none to begin with" do
-    expect(Fundraiser.count).to eq 0
-  end
 
   it "after creating fundraiser, there is 1 fundraiser" do
-    Fundraiser.create
-    expect(Fundraiser.count).to eq 1
+    expect { Fundraiser.create }
+      .to change { Fundraiser.count }.by 1
   end
 
   context "fixtures" do
@@ -26,8 +23,8 @@ RSpec.describe Fundraiser do
     end
 
     it "each fundraiser has 2 payments" do
-      expect(Fundraiser.first.payments.count).to eq 2
-      expect(Fundraiser.last.payments.count).to eq 2
+      expect(Fundraiser.first.payments.count).to eq 1
+      expect(Fundraiser.last.payments.count).to eq 3
     end
   end
 end
