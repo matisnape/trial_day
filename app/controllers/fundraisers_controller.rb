@@ -2,7 +2,7 @@ class FundraisersController < ApplicationController
   before_action :set_fundraiser, only: [:show, :destroy]
 
   def index
-    @fundraisers = Fundraiser.all.includes(:payments)
+    @fundraisers = Fundraiser.all
   end
 
   def show
