@@ -42,8 +42,8 @@ RSpec.describe ImportFromAPI do
 
   it "imports one fundraiser to db with payments" do
     expect { new_import.run! }
-      .to change { Fundraiser.count }.by(1)
-      .and change { Payment.count }.by(payments.count)
+      .to change { Fundraiser.count }.by 1
+      .and change { Payment.count }.by payments.count
 
     expect(Fundraiser.first).to have_attributes(
       parsed_response_first_page.slice(
