@@ -9,13 +9,13 @@
   </div>
   <div class="card">
     <div class="card-body">
-      <h4 class="card-title">Wpłaty</h2>
+      <h4 class="card-title">Wpłaty</h4>
       <ol>
         <%= render @payments %>
       </ol>
     </div>
     <div class="card-footer">
-      <%= will_paginate @payments %>
+      <%= will_paginate @payments, inner_window: 2, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
     </div>
   </div>
 </div>

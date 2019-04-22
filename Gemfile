@@ -41,6 +41,7 @@ gem 'jquery-rails'
 gem 'httparty'
 gem 'webmock'
 gem 'will_paginate'
+gem 'will_paginate-bootstrap4'
 
 
 group :development, :test do
